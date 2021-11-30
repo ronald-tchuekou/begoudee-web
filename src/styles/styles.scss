@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@import './dimens';
+@import './theme';
+@import "./buttons";
+@import './grid';
+@import './flexbox';
+@import './padding_margin';
+@import './input';
+@import './global';
+
+.invisible-scroll {
+    &::-webkit-scrollbar-track {
+        visibility: hidden;
+    }
+
+    &::-webkit-scrollbar {
+        visibility: hidden;
+        width: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        visibility: hidden;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #ffffff;
+}
+
+.luckiest-font {
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.text-bold {
+    font-weight: 700;
+}

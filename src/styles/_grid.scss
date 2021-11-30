@@ -1,0 +1,81 @@
+/******************************************\
+    Pour la gestion du grid template.
+\******************************************/
+%col {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding: 0 $gutter * 0.5;
+    transition: 0.3s;
+}
+
+%clearfix {
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    // &:before {
+    //     clear: both;
+    // }
+    & {
+        zoom: 1;
+    }
+}
+
+@mixin responsive-columns($suffix: '') {
+    .col#{$suffix}-center {
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+    .col#{$suffix}-hide {
+        display: none;
+    }
+    .col#{$suffix}-show {
+        display: block;
+    }
+    @for $var from 0 to ($columns + 1) {
+        .col#{$suffix}-#{$var} {
+            width: $var/ $columns * 100%;
+        }
+        .col#{$suffix}-push-#{$var} {
+            left: $var/ $columns * 100%;
+        }
+    }
+}
+
+.row {
+    margin: 0 $gutter * -0.5;
+    @extend %clearfix;
+}
+
+@for $var from 0 to ($columns + 1) {
+    .col-#{$var} {
+        @extend %col;
+    }
+    .col-m-#{$var} {
+        @extend %col;
+    }
+    .col-l-#{$var} {
+        @extend %col;
+    }
+    .col-xl-#{$var} {
+        @extend %col;
+    }
+}
+
+@include responsive-columns();
+
+@media only screen and (min-width: $medium) {
+    @include responsive-columns('-m');
+}
+
+@media only screen and (min-width: $large) {
+    @include responsive-columns('-l');
+}
+
+@media only screen and (min-width: $x-large) {
+    @include responsive-columns('-xl');
+}

@@ -1,0 +1,104 @@
+/********************\
+    Mixin
+\********************/
+$content-types: 'center', 'end', 'flex-end', 'flex-start', 'left', 'right', 'safe', 'unsafe', 'start', 'stretch';
+
+@mixin generatFlex($prefix: '') {
+    @each $type in $content-types {
+        &.#{$prefix}content-#{$type} {
+            justify-content: #{$type};
+        }
+    }
+    &.#{$prefix}flex-flow-wrap{
+        flex-flow: wrap;
+    }
+    &.#{$prefix}flex-flow-nowrap{
+        flex-flow: nowrap;
+    }
+    &.#{$prefix}d-flex-r {
+        flex-direction: row;
+    }
+    &.#{$prefix}d-flex-rr {
+        flex-direction: row-reverse;
+    }
+    &.#{$prefix}d-flex-c {
+        flex-direction: column;
+    }
+    &.#{$prefix}d-flex-cr {
+        flex-direction: column-reverse;
+    }
+    &.#{$prefix}content-between {
+        justify-content: space-between;
+    }
+    &.#{$prefix}content-around {
+        justify-content: space-around;
+    }
+    &.#{$prefix}content-evenly {
+        justify-content: space-evenly;
+    }
+    &.#{$prefix}items-center {
+        align-items: center;
+    }
+    &.#{$prefix}items-end {
+        align-items: flex-end;
+    }
+    &.#{$prefix}items-start {
+        align-items: flex-start;
+    }
+    &.#{$prefix}items-baseline {
+        align-items: baseline;
+    }
+    .#{$prefix}flex-none {
+        flex: none;
+    }
+    .#{$prefix}flex-auto {
+        flex: auto;
+    }
+    .#{$prefix}flex-unset {
+        flex: unset;
+    }
+    .#{$prefix}flex-grow-unset {
+        flex-grow: unset;
+    }
+    .#{$prefix}flex-shrink-unset {
+        flex-shrink: unset;
+    }
+    @for $var from 1 to 13 {
+        .#{$prefix}flex-#{$var} {
+            flex: $var;
+        }
+        .#{$prefix}flex-grow-#{$var} {
+            flex-grow: $var;
+        }
+        .#{$prefix}flex-shrink-#{$var} {
+            flex-shrink: $var;
+        }
+    }
+}
+
+.d-flex {
+    display: flex;
+    @include generatFlex('');
+}
+
+@media only screen and (min-width: $medium) {
+    .m-d-flex {
+        display: flex;
+        @include generatFlex('m-');
+    }
+}
+
+@media only screen and (min-width: $large) {
+    .l-d-flex {
+        display: flex;
+        @include generatFlex('l-');
+    }
+}
+
+@media only screen and (min-width: $x-large) {
+    .xl-d-flex {
+        display: flex;
+        width: 100%;
+        @include generatFlex('xl-');
+    }
+}

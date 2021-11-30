@@ -1,0 +1,80 @@
+/******************************************\
+    Pour la gestion des champs d'edition.
+\******************************************/
+.text-input__wrapper {
+    margin: 5px 0;
+    position: relative;
+    i {
+        color: $primary_color_50;
+        font-weight: 700;
+        font-size: 23px;
+        transition: 0.3s;
+    }
+    &.error {
+        .input__content {
+            outline-color: $danger_color_50;
+        }
+    }
+    &.disabled {
+        .input__content {
+            background: $bg_input_disabled;
+        }
+        .input_icon_indicator {
+            cursor: default;
+        }
+    }
+    .input__content {
+        display: flex;
+        font-size: 18px;
+        font-weight: 400;
+        min-height: 40px;
+        max-height: 40px;
+        background: $bg_input;
+        padding: 8px 10px;
+        border-radius: 6px;
+        outline: 1px solid transparent;
+        transition: 0.3s;
+        &.focus {
+            outline-color: $primary_color_50;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            margin-left: 5px;
+            border: none;
+            outline: none;
+            font: inherit;
+            color: $input_rext_color;
+            &::placeholder {
+                color: $default_text_color;
+            }
+            &:-internal-autofill-selected {
+                background: -internal-light-dark(transparent, transparent) !important;
+                color: $input_rext_color !important;
+                appearance: inherit;
+            }
+        }
+    }
+    .error_text {
+        color: $danger_color;
+        font-size: 15px;
+        font-weight: 400;
+        padding: 0 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+    .input_icon_indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 44px;
+        width: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
