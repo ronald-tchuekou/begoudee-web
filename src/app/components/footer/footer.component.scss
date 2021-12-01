@@ -1,4 +1,4 @@
-footer{
+footer {
     background-color: #ff3e79;
     margin-top: 6rem;
     padding: 10px;
@@ -23,8 +23,9 @@ footer{
                 font-weight: 500;
                 transition: 0.3s;
                 padding: 3px 4px;
+                border-bottom: 1px solid transparent;
                 &:hover {
-                    color: #f79d31;
+                    border-bottom-color: white;
                 }
             }
             &:last-child {
@@ -42,7 +43,7 @@ footer{
                     transition: 0.2s;
                     border-radius: 50%;
                     &:hover {
-                        background-color: rgba(247, 158, 49, 0.151);
+                        background-color: rgba(0, 86, 136, 0.151);
                     }
                 }
             }
@@ -84,6 +85,19 @@ footer{
                     border-bottom-color: transparent;
                 }
             }
+        }
+    }
+
+    input {
+        border: none;
+        outline: none;
+        padding: 7px 15px;
+        background-color: white;
+        font-size: 17px;
+        font-weight: 400;
+        color: #555555;
+        &::placeholder {
+            color: rgb(163, 163, 163);
         }
     }
 }
