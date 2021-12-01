@@ -219,11 +219,11 @@ class SimpleCarousel {
         }
 
         // Timer
-        // if (this.options.timer > 0) {
-        //     this.timeOut = setInterval(() => {
-        //         this.next()
-        //     }, this.options.timer)
-        // }
+        if (this.options.timer > 0) {
+            this.timeOut = setInterval(() => {
+                this.next()
+            }, this.options.timer)
+        }
     }
 
     /**
@@ -479,9 +479,9 @@ function initDrawer(element, visible = 3, scroll = 3) {
         slidesVisible: visible,
         slidesToScroll: scroll,
         infinite: false,
-        looping: false,
+        looping: true,
         navigation: true,
-        timer: 4000,
+        timer: 7000,
     })
     return d
 }
