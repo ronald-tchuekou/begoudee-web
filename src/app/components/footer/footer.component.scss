@@ -1,5 +1,89 @@
 footer{
     background-color: #ff3e79;
-    height: 400px;
     margin-top: 6rem;
+    padding: 10px;
+    color: white;
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        .item {
+            flex: 1;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            margin: 10px 0;
+            flex-direction: column;
+            border-right: 2px solid white;
+            a {
+                color: white;
+                display: block;
+                font-weight: 500;
+                transition: 0.3s;
+                padding: 3px 4px;
+                &:hover {
+                    color: #f79d31;
+                }
+            }
+            &:last-child {
+                border-right-color: transparent;
+            }
+            .social {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                a {
+                    margin: 5px;
+                    width: 40px;
+                    height: 40px;
+                    padding: 10px;
+                    transition: 0.2s;
+                    border-radius: 50%;
+                    &:hover {
+                        background-color: rgba(247, 158, 49, 0.151);
+                    }
+                }
+            }
+        }
+        .download-btn {
+            .btn-dwl {
+                display: block;
+                background-color: white;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                margin: 10px;
+                padding: 5px 10px;
+                display: flex;
+                width: 150px;
+                flex-direction: row;
+                justify-content: space-between;
+                color: rgb(53, 53, 53);
+                svg {
+                    flex: none;
+                    width: 35px;
+                    height: 35px;
+                }
+                div {
+                    margin: 0;
+                    padding: 0 10px;
+                    white-space: nowrap;
+                    color: rgb(36, 36, 36);
+                }
+            }
+        }
+
+        @media only screen and (max-width: 640px) {
+            flex-direction: column;
+            .item {
+                border-right-color: transparent;
+                border-bottom: 2px solid white;
+                &:last-child {
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
 }
