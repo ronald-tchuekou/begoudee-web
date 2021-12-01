@@ -10,25 +10,38 @@ hr {
     align-items: center;
     flex-direction: column;
     padding: 15px;
+    margin: 10px;
     height: 300px;
+    font-size: 16px;
     border-right: 1px solid #ff3e79;
     &.not {
         border-right-color: transparent;
+    }
+    @media only screen and (max-width:800px) {
+        border: 1px solid #ff3e79;
+        border-radius: 10px;
+        margin: 20px;
+        &.not {
+        border-right-color: #ff3e79;
+    }
     }
 }
 
 .conseil-content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 .conseil-item {
     flex: 1;
     display: flex;
+    margin: 10px 30px; padding: 10px;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    svg{
+        width: 110%;
+    }
     div {
         margin-top: 25px !important;
     }
